@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英語文法チェックテスト</title>
+    <style>
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 10px;
+        }
+        h2 {
+            color: #2980b9;
+            margin-top: 30px;
+            border-left: 5px solid #3498db;
+            padding-left: 10px;
+        }
+        .question-block {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fafafa;
+            border-radius: 6px;
+            border-left: 3px solid #ccc;
+        }
+        .q-text {
+            font-size: 1.1em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        select, input[type="text"] {
+            padding: 6px 10px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            margin: 0 5px;
+            background-color: #fff;
+        }
+        input[type="text"] {
+            width: 120px;
+            text-align: center;
+        }
+        .btn-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1.2em;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            display: inline-block;
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        .correct { color: #27ae60; }
+        .incorrect { color: #c0392b; }
+        #score-display {
+            text-align: center;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #2c3e50;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>📝 英語文法チェックテスト (5章〜8章)</h1>
+    
+    <form id="quiz-form">
+        <!-- 第5章 -->
+        <h2>5. 前置詞（時を表す表現）</h2>
+        <div class="question-block">
+            <div class="q-text">Q1. See you <select data-ans="c"><option value="">--選択--</option><option value="a">at</option><option value="b">in</option><option value="c">on</option></select> Monday. Have a nice weekend. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q2. I'm hungry. I haven't eaten <select data-ans="b"><option value="">--選択--</option><option value="a">during</option><option value="b">for</option><option value="c">since</option></select> eight hours. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q3. Emi did homework <select data-ans="c"><option value="">--選択--</option><option value="a">by</option><option value="b">since</option><option value="c">until</option></select> 3:00 a.m. so she's very tired. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q4. <select data-ans="a"><option value="">--選択--</option><option value="a">After</option><option value="b">At</option><option value="c">During</option></select> lunch we went to a café for dessert. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q5. Barry visited Japan <select data-ans="c"><option value="">--選択--</option><option value="a">at</option><option value="b">by</option><option value="c">in</option></select> the summer of 2012. <span class="result"></span></div>
+        </div>
+
+        <!-- 第6章 -->
+        <h2>6. 数えられる名詞・数えられない名詞</h2>
+        <div class="question-block">
+            <div class="q-text">Q6. A vegetarian doesn't eat <select data-ans="c"><option value="">--選択--</option><option value="a">a meat</option><option value="b">meats</option><option value="c">meat</option></select>. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q7. Let's have <select data-ans="a"><option value="">--選択--</option><option value="a">chicken</option><option value="b">chickens</option><option value="c">some chickens</option></select> for dinner tonight. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q8. There <select data-ans="a"><option value="">--選択--</option><option value="a">isn't much</option><option value="b">aren't many</option><option value="c">isn't some</option></select> sugar in the bowl. <span class="result"></span></div>
+        </div>
+
+        <!-- 第7章 -->
+        <h2>7. 未来を表す表現</h2>
+        <div class="question-block">
+            <div class="q-text">Q9. Hurry up or we <select data-ans="b"><option value="">--選択--</option><option value="a">will late</option><option value="b">will be late</option><option value="c">are going to late</option></select> for the class. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q10. John sold his car. He <select data-ans="a"><option value="">--選択--</option><option value="a">is going to</option><option value="b">isn't going to</option><option value="c">will</option></select> move to Japan. <span class="result"></span></div>
+        </div>
+
+        <!-- 第8章 -->
+        <h2>8. 助動詞</h2>
+        <div class="question-block">
+            <div class="q-text">Q11. You <select data-ans="a"><option value="">--選択--</option><option value="a">don't have to</option><option value="b">must not</option><option value="c">wouldn't</option></select> do the dishes. I'll do them later. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q12. You <select data-ans="a"><option value="">--選択--</option><option value="a">ought</option><option value="b">should</option><option value="c">must</option></select> to study more. <span class="result"></span></div>
+        </div>
+
+        <!-- 記述式問題（You and Meから抜粋） -->
+        <h2>記述問題（直接入力してね）</h2>
+        <div class="question-block">
+            <div class="q-text">Q13. A: What do you think I <input type="text" data-ans="should" placeholder="助動詞"> wear to the soccer game?<br>B: Something warm. It's going to be cold. <span class="result"></span></div>
+        </div>
+        <div class="question-block">
+            <div class="q-text">Q14. A: Would you like a cup of coffee?<br>B: No, thanks. But a <input type="text" data-ans="glass" placeholder="容器名"> of water would be nice. <span class="result"></span></div>
+        </div>
+
+        <div class="btn-container">
+            <button type="button" onclick="checkAnswers()">答え合わせをする</button>
+        </div>
+    </form>
+
+    <div id="score-display"></div>
+</div>
+
+<script>
+    function checkAnswers() {
+        let total = 0;
+        let score = 0;
+        
+        // セレクトボックスの採点
+        const selects = document.querySelectorAll('select');
+        selects.forEach(select => {
+            total++;
+            const userAns = select.value;
+            const correctAns = select.getAttribute('data-ans');
+            const resultSpan = select.nextElementSibling;
+            
+            if (userAns === correctAns) {
+                score++;
+                resultSpan.innerHTML = '⭕️ 正解！';
+                resultSpan.className = 'result correct';
+            } else {
+                resultSpan.innerHTML = `❌ 不正解 (正解: ${correctAns})`;
+                resultSpan.className = 'result incorrect';
+            }
+        });
+
+        // テキスト入力の採点
+        const inputs = document.querySelectorAll('input[type="text"]');
+        inputs.forEach(input => {
+            total++;
+            const userAns = input.value.trim().toLowerCase();
+            const correctAns = input.getAttribute('data-ans').toLowerCase();
+            const resultSpan = input.parentNode.querySelector('.result');
+            
+            if (userAns === correctAns) {
+                score++;
+                resultSpan.innerHTML = '⭕️ 正解！';
+                resultSpan.className = 'result correct';
+            } else {
+                resultSpan.innerHTML = `❌ 不正解 (正解: ${correctAns})`;
+                resultSpan.className = 'result incorrect';
+            }
+        });
+
+        // スコア表示
+        const scoreDisplay = document.getElementById('score-display');
+        scoreDisplay.style.display = 'block';
+        scoreDisplay.innerHTML = `結果： ${total} 問中 ${score} 問正解！ 🎉`;
+        
+        // 画面最下部へスクロール
+        window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+    }
+</script>
+
+</body>
+</html>
